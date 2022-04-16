@@ -20,7 +20,7 @@ local camera = game.Workspace.CurrentCamera
 
 library.theme = {
     fontsize = 15,
-    titlesize = 19.4,
+    titlesize = 22,
     font = Enum.Font.Code,
     background = "",
     tilesize = 90,
@@ -35,7 +35,7 @@ library.theme = {
     outlinecolor2 = Color3.fromRGB(88, 0, 164),
     sectorcolor = Color3.fromRGB(25, 25, 25),
     toptextcolor = Color3.fromRGB(255, 255, 255),
-    topheight = 60,
+    topheight = 65,
     topcolor = Color3.fromRGB(20, 20, 20),
     topcolor2 = Color3.fromRGB(20, 20, 20),
     buttoncolor = Color3.fromRGB(20, 20, 20),
