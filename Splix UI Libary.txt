@@ -347,8 +347,8 @@ function library:new(props)
 		["themeitems"] = {
 			["accent"] = {
 				["BackgroundColor3"] = {},
-				["BorderColor3"] = {},
-				["TextColor3"] = {}
+				["BorderColor3"] = {220,20,60},
+				["TextColor3"] = {255, 255, 255}
 			}
 		}
 	}
