@@ -3527,7 +3527,7 @@ function library:CreateWindow(name, size, hidebutton)
         end
 
 
-        function tab:CreatePlayerlist(side)
+        function tab:CreatePlayerlist(name)
             local list = { }
             list.name = name or ""
 
