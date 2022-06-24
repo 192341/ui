@@ -19,8 +19,8 @@ local mouse = player:GetMouse()
 local camera = game.Workspace.CurrentCamera
 
 library.theme = {
-    fontsize = 17,
-    titlesize = 16,
+    fontsize = 18,
+    titlesize = 17,
     font = Enum.Font.SourceSansSemibold,
     background = "",
     tilesize = 90,
