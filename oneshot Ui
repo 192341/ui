@@ -45,7 +45,7 @@ library.theme = {
     itemscolor2 = Color3.fromRGB(210, 210, 210)
 }
 
-if libary.theme.Logo and Drawing then
+if libary.Logo and Drawing then
     local success = pcall(function() 
         library.Logo = Drawing.new("Image")
         library.Logo.Data = game:HttpGet("https://i.ibb.co/fVRpP4X/Oneshot-Non-Buyer.png")
