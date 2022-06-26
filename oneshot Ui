@@ -94,7 +94,7 @@ function library:CreateWatermark(name, position)
     watermark.mainbar.Visible = watermark.Visible
     watermark.mainbar.BorderSizePixel = 0
     watermark.mainbar.ZIndex = 5
-    watermark.mainbar.Position = UDim2.new(0.093, 0,-0.04, 0)
+    watermark.mainbar.Position = UDim2.new(0,10,0,10)
     watermark.mainbar.Size = UDim2.new(0, 0, 0, 45)
 
     watermark.Gradient = Instance.new("UIGradient", watermark.mainbar)
@@ -121,7 +121,7 @@ function library:CreateWatermark(name, position)
     watermark.label.Name = "FPSLabel"
     watermark.label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     watermark.label.BackgroundTransparency = 1.000
-    watermark.label.Position = UDim2.new(0.093, 0,-0.04, 0)
+    watermark.label.Position = UDim2.new(0,10,0,10)
     watermark.label.Size = UDim2.new(0, 238, 0, 25)
     watermark.label.Font = library.theme.font
     watermark.label.ZIndex = 6
@@ -139,7 +139,7 @@ function library:CreateWatermark(name, position)
     watermark.topbar.BackgroundColor3 = library.theme.accentcolor
     watermark.topbar.BorderSizePixel = 0
     watermark.topbar.Visible = watermark.Visible
-    watermark.topbar.Size = UDim2.new(0, 0, 0, 1)
+    watermark.topbar.Size = UDim2.new(0, 0, 0, 2)
 
     watermark.mainbar.Size = UDim2.new(0, watermark.label.TextBounds.X, 0, 25)
     watermark.topbar.Size = UDim2.new(0, watermark.label.TextBounds.X+6, 0, 1)
