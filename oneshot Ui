@@ -25,6 +25,7 @@ library.theme = {
     background = "",
     tilesize = 90,
     cursor = false,
+    Logo = true,
     cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
     backgroundcolor = Color3.fromRGB(10, 10, 10),
     tabstextcolor = Color3.fromRGB(255, 255, 255),
@@ -43,6 +44,16 @@ library.theme = {
     itemscolor = Color3.fromRGB(200, 200, 200),
     itemscolor2 = Color3.fromRGB(210, 210, 210)
 }
+
+if libary.theme.Logo and Drawing then
+    local success = pcall(function() 
+        library.Logo = Drawing.new("Image")
+        library.Logo.Data = game:HttpGet(https://i.ibb.co/fVRpP4X/Oneshot-Non-Buyer.png)
+        library.Logo.Size = Vector2.new(64, 64)
+        library.Logo.Visible = true
+        library.Logo.Rounding = 0
+        library.Logo.Position = "top"
+    end)
 
 if library.theme.cursor and Drawing then
     local success = pcall(function() 
