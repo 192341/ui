@@ -3653,3 +3653,4 @@ function library:CreateWindow(name, size, hidebutton)
 end
 
 return library
+end
