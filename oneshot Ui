@@ -48,7 +48,7 @@ library.theme = {
 if libary.theme.Logo and Drawing then
     local success = pcall(function() 
         library.Logo = Drawing.new("Image")
-        library.Logo.Data = game:HttpGet(https://i.ibb.co/fVRpP4X/Oneshot-Non-Buyer.png)
+        library.Logo.Data = game:HttpGet("https://i.ibb.co/fVRpP4X/Oneshot-Non-Buyer.png")
         library.Logo.Size = Vector2.new(64, 64)
         library.Logo.Visible = true
         library.Logo.Rounding = 0
