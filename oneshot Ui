@@ -25,6 +25,7 @@ library.theme = {
     background = "",
     tilesize = 90,
     cursor = false,
+    Logo = "rbxasset://10027663947"
     cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
     backgroundcolor = Color3.fromRGB(15, 15, 15),
     tabstextcolor = Color3.fromRGB(255, 255, 255),
@@ -35,7 +36,7 @@ library.theme = {
     outlinecolor2 = Color3.fromRGB(20, 20, 20),
     sectorcolor = Color3.fromRGB(20, 20, 20),
     toptextcolor = Color3.fromRGB(255, 255, 255),
-    topheight = 45,
+    topheight = 132,
     topcolor = Color3.fromRGB(15, 15, 15),
     topcolor2 = Color3.fromRGB(15, 15, 15),
     buttoncolor = Color3.fromRGB(35, 35, 35),
@@ -94,8 +95,8 @@ function library:CreateWatermark(name, position)
     watermark.mainbar.Visible = watermark.Visible
     watermark.mainbar.BorderSizePixel = 0
     watermark.mainbar.ZIndex = 5
-    watermark.mainbar.Position = UDim2.new(0,10,0,10)
-    watermark.mainbar.Size = UDim2.new(0, 0, 0, 45)
+    watermark.mainbar.Position = UDim2.new(0, position and position.X or 10, 0, position and position.Y or 10)
+    watermark.mainbar.Size = UDim2.new(0, 0, 0, 25)
 
     watermark.Gradient = Instance.new("UIGradient", watermark.mainbar)
     watermark.Gradient.Rotation = 90
@@ -121,7 +122,7 @@ function library:CreateWatermark(name, position)
     watermark.label.Name = "FPSLabel"
     watermark.label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     watermark.label.BackgroundTransparency = 1.000
-    watermark.label.Position = UDim2.new(0,10,0,10)
+    watermark.label.Position = UDim2.new(0, 0, 0, 0)
     watermark.label.Size = UDim2.new(0, 238, 0, 25)
     watermark.label.Font = library.theme.font
     watermark.label.ZIndex = 6
@@ -139,7 +140,7 @@ function library:CreateWatermark(name, position)
     watermark.topbar.BackgroundColor3 = library.theme.accentcolor
     watermark.topbar.BorderSizePixel = 0
     watermark.topbar.Visible = watermark.Visible
-    watermark.topbar.Size = UDim2.new(0, 0, 0, 2)
+    watermark.topbar.Size = UDim2.new(0, 0, 0, 1)
 
     watermark.mainbar.Size = UDim2.new(0, watermark.label.TextBounds.X, 0, 25)
     watermark.topbar.Size = UDim2.new(0, watermark.label.TextBounds.X+6, 0, 1)
@@ -348,16 +349,15 @@ function library:CreateWindow(name, size, hidebutton)
         window.TopGradient.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0.00, theme.topcolor), ColorSequenceKeypoint.new(1.00, theme.topcolor2) })
     end)
 
-    window.NameLabel = Instance.new("TextLabel", window.TopBar)
-    window.NameLabel.TextColor3 = window.theme.toptextcolor
-    window.NameLabel.Text = window.name
-    window.NameLabel.TextXAlignment = Enum.TextXAlignment.Left
-    window.NameLabel.Font = window.theme.font
-    window.NameLabel.Name = "title"
-    window.NameLabel.Position = UDim2.fromOffset(4, -2)
-    window.NameLabel.BackgroundTransparency = 1
-    window.NameLabel.Size = UDim2.fromOffset(190, window.TopBar.AbsoluteSize.Y / 2 - 2)
-    window.NameLabel.TextSize = window.theme.titlesize
+    window.TopBarImage = Instance.new("ImageLabel", window.Frame)
+    window.BackgroundImage.Name = "Logo"
+    window.BackgroundImage.BorderSizePixel = 0
+    window.BackgroundImage.Position = window.BlackLine.Position + UDim2.fromOffset(0, 1)
+    window.BackgroundImage.Size = UDim2.fromOffset(window.size.X.Offset, window.size.Y.Offset - window.TopBar.AbsoluteSize.Y - 1)
+    window.BackgroundImage.Image = window.theme.Logo or "rbxasset://10027663947"
+    window.BackgroundImage.ImageColor3 = Color3.new() 
+    window.BackgroundImage.BackgroundColor3 = window.theme.backgroundcolor
+    window.BackgroundImage.TileSize = UDim2.new(0, window.theme.tilesize, 0, window.theme.tilesize)
     updateevent.Event:Connect(function(theme)
         window.NameLabel.TextColor3 = theme.toptextcolor
         window.NameLabel.Font = theme.font
