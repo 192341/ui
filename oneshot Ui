@@ -350,18 +350,19 @@ function library:CreateWindow(name, size, hidebutton)
     end)
 
     window.TopBarImage = Instance.new("ImageLabel", window.Frame)
-    window.BackgroundImage.Name = "Logo"
-    window.BackgroundImage.BorderSizePixel = 0
-    window.BackgroundImage.Position = window.BlackLine.Position + UDim2.fromOffset(0, 1)
-    window.BackgroundImage.Size = UDim2.fromOffset(window.size.X.Offset, window.size.Y.Offset - window.TopBar.AbsoluteSize.Y - 1)
-    window.BackgroundImage.Image = window.theme.Logo or "rbxasset://10027663947"
-    window.BackgroundImage.ImageColor3 = Color3.new() 
-    window.BackgroundImage.BackgroundColor3 = window.theme.backgroundcolor
-    window.BackgroundImage.TileSize = UDim2.new(0, window.theme.tilesize, 0, window.theme.tilesize)
+    window.TopBarImage.Name = "Logo"
+    window.TopBarImage.BorderSizePixel = 0
+    window.TopBarImage.Position = window.BlackLine.Position + UDim2.fromOffset(0, 1)
+    window.TopBarImage.Size = UDim2.fromOffset(window.size.X.Offset, window.size.Y.Offset - window.TopBar.AbsoluteSize.Y - 1)
+    window.TopBarImage.Image = window.theme.Logo or "rbxasset://10027663947"
+    window.TopBarImage.ImageColor3 = Color3.new() 
+    window.TopBarImage.BackgroundColor3 = window.theme.backgroundcolor
+    window.TopBarImage.TileSize = UDim2.new(0, window.theme.tilesize, 0, window.theme.tilesize)
     updateevent.Event:Connect(function(theme)
-        window.NameLabel.TextColor3 = theme.toptextcolor
-        window.NameLabel.Font = theme.font
-        window.NameLabel.TextSize = theme.titlesize
+    updateevent.Event:Connect(function(theme)
+        window.BackgroundImage.Image = theme.background or ""
+        window.BackgroundImage.BackgroundColor3 = theme.backgroundcolor
+        window.BackgroundImage.TileSize = UDim2.new(0, theme.tilesize, 0, theme.tilesize)
     end)
 
     window.Line2 = Instance.new("Frame", window.TopBar)
