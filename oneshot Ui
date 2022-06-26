@@ -26,7 +26,7 @@ library.theme = {
     tilesize = 90,
     cursor = false,
     cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
-    backgroundcolor = Color3.fromRGB(15, 15, 15),
+    backgroundcolor = Color3.fromRGB(10, 10, 10),
     tabstextcolor = Color3.fromRGB(255, 255, 255),
     bordercolor = Color3.fromRGB(255, 48, 48),
     accentcolor = Color3.fromRGB(255, 48, 48),
@@ -35,7 +35,7 @@ library.theme = {
     outlinecolor2 = Color3.fromRGB(20, 20, 20),
     sectorcolor = Color3.fromRGB(20, 20, 20),
     toptextcolor = Color3.fromRGB(255, 255, 255),
-    topheight = 45,
+    topheight = 132,
     topcolor = Color3.fromRGB(15, 15, 15),
     topcolor2 = Color3.fromRGB(15, 15, 15),
     buttoncolor = Color3.fromRGB(35, 35, 35),
@@ -362,16 +362,6 @@ function library:CreateWindow(name, size, hidebutton)
         window.NameLabel.TextColor3 = theme.toptextcolor
         window.NameLabel.Font = theme.font
         window.NameLabel.TextSize = theme.titlesize
-    end)
-
-    window.Line2 = Instance.new("Frame", window.TopBar)
-    window.Line2.Name = "line"
-    window.Line2.Position = UDim2.fromOffset(0, window.TopBar.AbsoluteSize.Y / 2.1)
-    window.Line2.Size = UDim2.fromOffset(window.size.X.Offset, 1)
-    window.Line2.BorderSizePixel = 0
-    window.Line2.BackgroundColor3 = window.theme.accentcolor
-    updateevent.Event:Connect(function(theme)
-        window.Line2.BackgroundColor3 = theme.accentcolor
     end)
 
     window.TabList = Instance.new("Frame", window.TopBar)
