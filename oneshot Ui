@@ -25,7 +25,6 @@ library.theme = {
     background = "",
     tilesize = 90,
     cursor = false,
-    Logo = "rbxasset://10027663947"
     cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
     backgroundcolor = Color3.fromRGB(15, 15, 15),
     tabstextcolor = Color3.fromRGB(255, 255, 255),
@@ -36,7 +35,7 @@ library.theme = {
     outlinecolor2 = Color3.fromRGB(20, 20, 20),
     sectorcolor = Color3.fromRGB(20, 20, 20),
     toptextcolor = Color3.fromRGB(255, 255, 255),
-    topheight = 132,
+    topheight = 45,
     topcolor = Color3.fromRGB(15, 15, 15),
     topcolor2 = Color3.fromRGB(15, 15, 15),
     buttoncolor = Color3.fromRGB(35, 35, 35),
@@ -349,20 +348,20 @@ function library:CreateWindow(name, size, hidebutton)
         window.TopGradient.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0.00, theme.topcolor), ColorSequenceKeypoint.new(1.00, theme.topcolor2) })
     end)
 
-    window.TopBarImage = Instance.new("ImageLabel", window.Frame)
-    window.TopBarImage.Name = "Logo"
-    window.TopBarImage.BorderSizePixel = 0
-    window.TopBarImage.Position = window.BlackLine.Position + UDim2.fromOffset(0, 1)
-    window.TopBarImage.Size = UDim2.fromOffset(window.size.X.Offset, window.size.Y.Offset - window.TopBar.AbsoluteSize.Y - 1)
-    window.TopBarImage.Image = window.theme.Logo or "rbxasset://10027663947"
-    window.TopBarImage.ImageColor3 = Color3.new() 
-    window.TopBarImage.BackgroundColor3 = window.theme.backgroundcolor
-    window.TopBarImage.TileSize = UDim2.new(0, window.theme.tilesize, 0, window.theme.tilesize)
+    window.NameLabel = Instance.new("TextLabel", window.TopBar)
+    window.NameLabel.TextColor3 = window.theme.toptextcolor
+    window.NameLabel.Text = window.name
+    window.NameLabel.TextXAlignment = Enum.TextXAlignment.Left
+    window.NameLabel.Font = window.theme.font
+    window.NameLabel.Name = "title"
+    window.NameLabel.Position = UDim2.fromOffset(4, -2)
+    window.NameLabel.BackgroundTransparency = 1
+    window.NameLabel.Size = UDim2.fromOffset(190, window.TopBar.AbsoluteSize.Y / 2 - 2)
+    window.NameLabel.TextSize = window.theme.titlesize
     updateevent.Event:Connect(function(theme)
-    updateevent.Event:Connect(function(theme)
-        window.BackgroundImage.Image = theme.background or ""
-        window.BackgroundImage.BackgroundColor3 = theme.backgroundcolor
-        window.BackgroundImage.TileSize = UDim2.new(0, theme.tilesize, 0, theme.tilesize)
+        window.NameLabel.TextColor3 = theme.toptextcolor
+        window.NameLabel.Font = theme.font
+        window.NameLabel.TextSize = theme.titlesize
     end)
 
     window.Line2 = Instance.new("Frame", window.TopBar)
@@ -3406,7 +3405,7 @@ function library:CreateWindow(name, size, hidebutton)
                 makefolder(configSystem.configFolder)
             end
 
-            configSystem.sector = tab:CreateSector("Configs", side or "left")
+            configSystem.sector = tab:CreateSector("Configurations", side or "left")
 
             local ConfigName = configSystem.sector:AddTextbox("Config Name", "", ConfigName, function() end, "")
             local default = tostring(listfiles(configSystem.configFolder)[1] or ""):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", "")
@@ -3417,7 +3416,7 @@ function library:CreateWindow(name, size, hidebutton)
                 end
             end
 
-            configSystem.Create = configSystem.sector:AddButton("Create", function()
+            configSystem.Create = configSystem.sector:AddButton("Create Config", function()
                 for i,v in pairs(listfiles(configSystem.configFolder)) do
                     Config:Remove(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
                 end
@@ -3449,7 +3448,7 @@ function library:CreateWindow(name, size, hidebutton)
                 end
             end)
 
-            configSystem.Save = configSystem.sector:AddButton("Save", function()
+            configSystem.Save = configSystem.sector:AddButton("Save Config", function()
                 local config = {}
                 if Config:Get() and Config:Get() ~= "" then
                     for i,v in pairs(library.flags) do
@@ -3470,7 +3469,7 @@ function library:CreateWindow(name, size, hidebutton)
                 end
             end)
 
-            configSystem.Load = configSystem.sector:AddButton("Load", function()
+            configSystem.Load = configSystem.sector:AddButton("Load Config", function()
                 local Success = pcall(readfile, configSystem.configFolder .. "/" .. Config:Get() .. ".txt")
                 if (Success) then
                     pcall(function() 
@@ -3508,7 +3507,7 @@ function library:CreateWindow(name, size, hidebutton)
                 end
             end)
 
-            configSystem.Delete = configSystem.sector:AddButton("Delete", function()
+            configSystem.Delete = configSystem.sector:AddButton("Delete Config", function()
                 for i,v in pairs(listfiles(configSystem.configFolder)) do
                     Config:Remove(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
                 end
