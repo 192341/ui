@@ -20,7 +20,7 @@ local camera = game.Workspace.CurrentCamera
 
 library.theme = {
     fontsize = 17,
-    titlesize = 16,
+    titlesize = 18,
     font = Enum.Font.SourceSansSemibold,
     background = "",
     tilesize = 90,
@@ -35,13 +35,13 @@ library.theme = {
     outlinecolor2 = Color3.fromRGB(20, 20, 20),
     sectorcolor = Color3.fromRGB(20, 20, 20),
     toptextcolor = Color3.fromRGB(255, 255, 255),
-    topheight = 45,
+    topheight = 65,
     topcolor = Color3.fromRGB(20, 20, 20),
     topcolor2 = Color3.fromRGB(20, 20, 20),
     buttoncolor = Color3.fromRGB(30, 30, 30),
     buttoncolor2 = Color3.fromRGB(30, 30, 30),
-    itemscolor = Color3.fromRGB(255, 48, 48),
-    itemscolor2 = Color3.fromRGB(255, 48, 48)
+    itemscolor = Color3.fromRGB(255, 255, 255),
+    itemscolor2 = Color3.fromRGB(255, 255, 255)
 }
 
 if library.theme.cursor and Drawing then
