@@ -680,7 +680,7 @@ do
         end
         --
         function window:Watermark(info)
-            window.watermark = {visible = false}
+            window.watermark = {visible = true}
             --
             local info = info or {}
             --
@@ -776,7 +776,7 @@ do
             --
             spawn(function()
                 while wait(0.1) do
-                    watermark_title.Text = string.format("$ %s $ || ping : " .. tostring(library.shared.ping) .. "ms || fps : " .. tostring(library.shared.fps), window.name)
+                    watermark_title.Text = string.format("Oneshot || ping : " .. tostring(library.shared.ping) .. "ms || fps : " .. tostring(library.shared.fps), window.name)
                     window.watermark:UpdateSize()
                 end
             end)
