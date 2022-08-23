@@ -1,5 +1,6 @@
 -- Modified support for Krnl and others
 
+
 --LIBRARY START
 --Services
 getgenv().runService = game:GetService"RunService"
@@ -1963,7 +1964,7 @@ function library:AddTab(title, pos)
                 option.values = typeof(option.values) == "table" and option.values or {}
                 option.callback = typeof(option.callback) == "function" and option.callback or function() end
                 option.multiselect = typeof(option.multiselect) == "boolean" and option.multiselect or false
-                --option.groupbox = (not option.multiselect) and (typeof(option.groupbox) == "boolean" and option.groupbox or false)
+                option.groupbox = (not option.multiselect) and (typeof(option.groupbox) == "boolean" and option.groupbox or false)
                 option.value = option.multiselect and (typeof(option.value) == "table" and option.value or {}) or tostring(option.value or option.values[1] or "")
                 if option.multiselect then
                     for i,v in next, option.values do
