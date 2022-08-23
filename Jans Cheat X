@@ -728,7 +728,7 @@ library.createSlider = function(option, parent)
             option.title.Text = (option.text == "nil" and "" or option.text .. ": ") .. option.value .. option.suffix
         end
     end)
-
+    
     option.title.FocusLost:connect(function()
         option.slider.BorderColor3 = Color3.new()
         if manualInput then
@@ -2704,4 +2704,3 @@ local function promptLib()
         return Prompt,Screen
     end
 end 
-
