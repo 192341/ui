@@ -1,8 +1,4 @@
--- Modified support for Krnl and others
 
-
---LIBRARY START
---Services
 getgenv().runService = game:GetService"RunService"
 getgenv().textService = game:GetService"TextService"
 getgenv().inputService = game:GetService"UserInputService"
@@ -15,17 +11,17 @@ end
 local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = "Oneshot", open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "Oneshot_Configs", fileext = ".txt"}
 getgenv().library = library
 
---Locals
+
 local dragging, dragInput, dragStart, startPos, dragObject
 
-local blacklistedKeys = { --add or remove keys if you find the need to
+local blacklistedKeys = { 
     Enum.KeyCode.Unknown,Enum.KeyCode.W,Enum.KeyCode.A,Enum.KeyCode.S,Enum.KeyCode.D,Enum.KeyCode.Slash,Enum.KeyCode.Tab,Enum.KeyCode.Escape
 }
-local whitelistedMouseinputs = { --add or remove mouse inputs if you find the need to
+local whitelistedMouseinputs = { 
     Enum.UserInputType.MouseButton1,Enum.UserInputType.MouseButton2,Enum.UserInputType.MouseButton3
 }
 
---Functions
+
 library.round = function(num, bracket)
     if typeof(num) == "Vector2" then
         return Vector2.new(library.round(num.X), library.round(num.Y))
@@ -38,7 +34,7 @@ library.round = function(num, bracket)
     end
 end
 
---From: https://devforum.roblox.com/t/how-to-create-a-simple-rainbow-effect-using-tweenService/221849/2
+
 local chromaColor
 spawn(function()
     while library and wait() do
@@ -367,12 +363,12 @@ library.createToggle = function(option, parent)
             if not library.warning and not library.slider then
                 if option.style then
                     tickbox.ImageColor3 = library.flags["Menu Accent Color"]
-                    --tweenService:Create(tickbox, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = library.flags["Menu Accent Color"]}):Play()
+                    tweenService:Create(tickbox, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = library.flags["Menu Accent Color"]}):Play()
                 else
                     tickbox.BorderColor3 = library.flags["Menu Accent Color"]
                     tickboxOverlay.BorderColor3 = library.flags["Menu Accent Color"]
-                    --tweenService:Create(tickbox, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.flags["Menu Accent Color"]}):Play()
-                    --tweenService:Create(tickboxOverlay, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.flags["Menu Accent Color"]}):Play()
+                    tweenService:Create(tickbox, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.flags["Menu Accent Color"]}):Play()
+                    tweenService:Create(tickboxOverlay, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.flags["Menu Accent Color"]}):Play()
                 end
             end
             if option.tip then
@@ -394,12 +390,12 @@ library.createToggle = function(option, parent)
         if input.UserInputType.Name == "MouseMovement" then
             if option.style then
                 tickbox.ImageColor3 = Color3.new()
-                --tweenService:Create(tickbox, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = Color3.new()}):Play()
+                tweenService:Create(tickbox, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageColor3 = Color3.new()}):Play()
             else
                 tickbox.BorderColor3 = Color3.new()
                 tickboxOverlay.BorderColor3 = Color3.new()
-                --tweenService:Create(tickbox, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.new()}):Play()
-                --tweenService:Create(tickboxOverlay, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.new()}):Play()
+                tweenService:Create(tickbox, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.new()}):Play()
+                tweenService:Create(tickboxOverlay, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.new()}):Play()
             end
             library.tooltip.Position = UDim2.new(2)
         end
@@ -781,7 +777,7 @@ library.createSlider = function(option, parent)
             library.tooltip.Position = UDim2.new(2)
             if option ~= library.slider then
                 option.slider.BorderColor3 = Color3.new()
-                --option.fill.BorderColor3 = Color3.new()
+                option.fill.BorderColor3 = Color3.new()
             end
         end
     end)
@@ -1288,7 +1284,7 @@ end
 library.createColorPickerWindow = function(option)
     option.mainHolder = library:Create("TextButton", {
         ZIndex = 4,
-        --Position = UDim2.new(1, -184, 1, 6),
+        Position = UDim2.new(1, -184, 1, 6),
         Size = UDim2.new(0, option.trans and 200 or 184, 0, 264),
         BackgroundColor3 = Color3.fromRGB(40, 40, 40),
         BorderColor3 = Color3.new(),
@@ -1356,9 +1352,9 @@ library.createColorPickerWindow = function(option)
 
     option.hexBox = option.rgbBox:Clone()
     option.hexBox.Position = UDim2.new(0, 6, 0, 238)
-    -- option.hexBox.Size = UDim2.new(0, (option.mainHolder.AbsoluteSize.X/2 - 10), 0, 20)
+    option.hexBox.Size = UDim2.new(0, (option.mainHolder.AbsoluteSize.X/2 - 10), 0, 20)
     option.hexBox.Parent = option.mainHolder
-    option.hexInput = option.hexBox.TextBox;
+    option.hexInput = option.hexBox.TextBox; 
 
     library:Create("ImageLabel", {
         ZIndex = 4,
@@ -2709,4 +2705,4 @@ local function promptLib()
     end
 end 
 
---LIBRARY END
+LIBRARY END
