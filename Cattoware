@@ -442,7 +442,6 @@ function library:CreateWindow(name, size, hidebutton)
         tab.TabButton.TextColor3 = window.theme.tabstextcolor
         tab.TabButton.Text = tab.name
         tab.TabButton.AutoButtonColor = false
-        tab.TabButton.Color = Color3.fromRGB(35,35,35)
         tab.TabButton.Font = window.theme.font
         tab.TabButton.TextYAlignment = Enum.TextYAlignment.Center
         tab.TabButton.BackgroundTransparency = 0
