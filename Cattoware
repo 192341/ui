@@ -22,22 +22,22 @@ library.theme = {
     fontsize = 15,
     titlesize = 18,
     font = Enum.Font.Code,
-    background = "rbxassetid://10355831759",
+    background = "",
     tilesize = 90,
     cursor = false,
     cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
-    backgroundcolor = Color3.fromRGB(220, 20, 60),
-    tabstextcolor = Color3.fromRGB(240, 240, 240),
+    backgroundcolor = Color3.fromRGB(25, 25, 25),
+    tabstextcolor = Color3.fromRGB(255, 255, 255),
     bordercolor = Color3.fromRGB(60, 60, 60),
-    accentcolor = Color3.fromRGB(28, 56, 139),
-    accentcolor2 = Color3.fromRGB(16, 31, 78),
+    accentcolor = Color3.fromRGB(138, 43, 226),
+    accentcolor2 = Color3.fromRGB(106, 90, 205),
     outlinecolor = Color3.fromRGB(60, 60, 60),
     outlinecolor2 = Color3.fromRGB(0, 0, 0),
     sectorcolor = Color3.fromRGB(30, 30, 30),
     toptextcolor = Color3.fromRGB(255, 255, 255),
     topheight = 48,
     topcolor = Color3.fromRGB(30, 30, 30),
-    topcolor2 = Color3.fromRGB(30, 30, 30),
+    topcolor2 = Color3.fromRGB(25, 25, 25),
     buttoncolor = Color3.fromRGB(49, 49, 49),
     buttoncolor2 = Color3.fromRGB(39, 39, 39),
     itemscolor = Color3.fromRGB(200, 200, 200),
@@ -444,7 +444,7 @@ function library:CreateWindow(name, size, hidebutton)
         tab.TabButton.AutoButtonColor = false
         tab.TabButton.Font = window.theme.font
         tab.TabButton.TextYAlignment = Enum.TextYAlignment.Center
-        tab.TabButton.BackgroundTransparency = 1
+        tab.TabButton.BackgroundTransparency = 0
         tab.TabButton.BorderSizePixel = 0
         tab.TabButton.Size = UDim2.fromOffset(size.X + 15, window.TabList.AbsoluteSize.Y - 1)
         tab.TabButton.Name = tab.name
@@ -3526,7 +3526,7 @@ function library:CreateWindow(name, size, hidebutton)
             return configSystem
         end
 
-        --[[ not finished lol
+
         function tab:CreatePlayerlist(name)
             local list = { }
             list.name = name or ""
@@ -3643,7 +3643,6 @@ function library:CreateWindow(name, size, hidebutton)
             
             return list
         end
-        ]]--
 
         table.insert(window.Tabs, tab)
         return tab
