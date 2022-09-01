@@ -43,7 +43,9 @@ local theme = {
     textborder = Color3.fromRGB(0, 0, 0),
     cursoroutline = Color3.fromRGB(20, 20, 20),
     font = 2,
-    textsize = 13
+    textsize = 13,
+    KeybindsList = false,
+    Watermark = false
 }
 
 -- // Utility Functions
@@ -680,7 +682,7 @@ do
         end
         --
         function window:Watermark(info)
-            window.watermark = {visible = false}
+            window.watermark = {visible = theme.Watermark}
             --
             local info = info or {}
             --
@@ -947,7 +949,7 @@ do
         end
         --
         function window:KeybindsList(info)
-            window.keybindslist = {visible =  false, keybinds = {}}
+            window.keybindslist = {visible = theme.KeybindsList, keybinds = {}}
             --
             local info = info or {}
             --
