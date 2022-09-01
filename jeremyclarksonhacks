@@ -2905,7 +2905,7 @@ do
             Visible = page.open
         }, section.visibleContent);dropdown["dropdown_image"] = dropdown_image
         --
-        utility:LoadImage(dropdown_image, "dropdown_down", "https://i.ibb.co/J5hz1cS/Minus-Icon.png")
+        utility:LoadImage(dropdown_image, "dropdown_down", "https://i.ibb.co/kyD8ZgK/Splix-Minus-Icon.png")
         utility:LoadImage(dropdown__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
         --
         function dropdown:Update()
@@ -2956,7 +2956,7 @@ do
                     if not dropdown.open then
                         window:CloseContent()
                         dropdown.open = not dropdown.open
-                        utility:LoadImage(dropdown_image, "dropdown_up", "https://i.ibb.co/YhxRmfm/Plus-Icon.png")
+                        utility:LoadImage(dropdown_image, "dropdown_up", "https://i.ibb.co/RD2mrBL/Splix-Plus-Icon.png")
                         --
                         local dropdown_open_outline = utility:Create("Frame", {Vector2.new(0,19), dropdown_outline}, {
                             Size = utility:Size(1, 0, 0, 3 + (#options * 19), dropdown_outline),
