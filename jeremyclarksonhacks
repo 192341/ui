@@ -684,7 +684,7 @@ do
         end
         --
         function window:Watermark(info)
-            window.watermark.visible = true
+            window.watermark.visible = {visible = true}
             --
             local info = info or {}
             --
