@@ -684,7 +684,7 @@ do
         end
         --
         function window:Watermark(info)
-            window.watermark.visible = false
+            window.watermark.visible = nil
             --
             local info = info or {}
             --
@@ -951,7 +951,7 @@ do
         end
         --
         function window:KeybindsList(info)
-            window.keybindslist = {visible = theme.KeybindsList, keybinds = {}}
+            window.keybindslist = {visible = nil, keybinds = {}}
             --
             local info = info or {}
             --
