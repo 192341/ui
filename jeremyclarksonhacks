@@ -48,7 +48,7 @@ local theme = {
     Watermark = false
 }
 
-
+--textbox
 
 -- // Utility Functions
 do
@@ -684,7 +684,7 @@ do
         end
         --
         function window:Watermark(info)
-            window.watermark = {visible = theme.Watermark}
+            window.watermark.visible = false
             --
             local info = info or {}
             --
@@ -780,7 +780,7 @@ do
             --
             spawn(function()
                 while wait(0.1) do
-                    watermark_title.Text = string.format("Oneshot | Da Hood | Buyer | Ping : " .. tostring(library.shared.ping) .. "ms | FPS : " .. tostring(library.shared.fps), window.name)
+                    watermark_title.Text = string.format("oneshot | public build | Ping : " .. tostring(library.shared.ping) .. "ms | FPS : " .. tostring(library.shared.fps), window.name)
                     window.watermark:UpdateSize()
                 end
             end)
