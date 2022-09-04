@@ -4464,4 +4464,4 @@ do
         return configLoader
     end
 end
-return library
+return library, utility, library.pointers, theme
