@@ -1,4 +1,4 @@
-
+--Splix Ui--
 -- // Variables
 local ws = game:GetService("Workspace")
 local uis = game:GetService("UserInputService")
@@ -684,7 +684,7 @@ do
         end
         --
         function window:Watermark(info)
-            window.watermark = {visible = false}
+            window.watermark = {visible = nil}
             --
             local info = info or {}
             --
@@ -795,7 +795,7 @@ do
             --
             function window.notificationlist:AddNotification(info)
                 local info = info or {}
-                local text = info.text or "label"
+                local text = info.text
                 local lifetime = info.lifetime or 5
                 --
                 local notification = {pressed = false}
@@ -951,7 +951,7 @@ do
         end
         --
         function window:KeybindsList(info)
-            window.keybindslist = {visible = false, keybinds = {}}
+            window.keybindslist = {visible = nil, keybinds = {}}
             --
             local info = info or {}
             --
@@ -2956,7 +2956,7 @@ do
                     if not dropdown.open then
                         window:CloseContent()
                         dropdown.open = not dropdown.open
-                        utility:LoadImage(dropdown_image, "dropdown_up", "https://i.ibb.co/RD2mrBL/Splix-Plus-Icon.png")
+                        utility:LoadImage(dropdown_image, "dropdown_up", "https://i.ibb.co/kyD8ZgK/Splix-Minus-Icon.png")
                         --
                         local dropdown_open_outline = utility:Create("Frame", {Vector2.new(0,19), dropdown_outline}, {
                             Size = utility:Size(1, 0, 0, 3 + (#options * 19), dropdown_outline),
@@ -4464,4 +4464,4 @@ do
         return configLoader
     end
 end
-return library, utility, library.pointers, theme
+return library
