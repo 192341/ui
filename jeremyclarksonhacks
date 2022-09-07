@@ -795,7 +795,7 @@ do
             --
             function window.notificationlist:AddNotification(info)
                 local info = info or {}
-                local text = info.text
+                local text = info.text or info.text or info.text
                 local lifetime = info.lifetime or 5
                 --
                 local notification = {pressed = false}
