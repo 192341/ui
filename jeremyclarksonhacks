@@ -44,7 +44,9 @@ local theme = {
     textborder = Color3.fromRGB(0, 0, 0),
     cursoroutline = Color3.fromRGB(20, 20, 20),
     font = 2,
-    textsize = 13
+    textsize = 13,
+    KeybindsList = false,
+    Watermark = false
 }
 
 --textbox
@@ -955,7 +957,7 @@ do
             local info = info or {}
             --
             local keybindslist_outline = utility:Create("Frame", {Vector2.new(10,(utility:GetScreenSize().Y/2)-200)}, {
-                Size = utility:Size(0, 150, 0, 22),
+                Size = utility:Size(0, 150, 0, 29),
                 Position = utility:Position(0, 10, 0.4, 0),
                 Hidden = true,
                 ZIndex = 53,
@@ -1018,7 +1020,7 @@ do
                     local keybindTable = {}
                     --
                     local keybind_outline = utility:Create("Frame", {Vector2.new(0,keybindslist_outline.Size.Y-1), keybindslist_outline}, {
-                        Size = utility:Size(1, 0, 0, 24, keybindslist_outline),
+                        Size = utility:Size(1, 0, 0, 18, keybindslist_outline),
                         Position = utility:Position(0, 0, 1, -1, keybindslist_outline),
                         Hidden = true,
                         ZIndex = 55,
