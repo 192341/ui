@@ -1,4 +1,5 @@
 --Splix Ui--
+
 -- // Variables
 local ws = game:GetService("Workspace")
 local uis = game:GetService("UserInputService")
@@ -993,7 +994,7 @@ do
             library.accents[#library.accents + 1] = keybindslist_accent
             --
             local keybindslist_title = utility:Create("TextLabel", {Vector2.new(keybindslist_outline.Size.X/2,4), keybindslist_outline}, {
-                Text = "keybinds",
+                Text = "Keybinds",
                 Size = theme.textsize,
                 Font = theme.font,
                 Color = theme.textcolor,
@@ -1019,7 +1020,7 @@ do
                     local keybindTable = {}
                     --
                     local keybind_outline = utility:Create("Frame", {Vector2.new(0,keybindslist_outline.Size.Y-1), keybindslist_outline}, {
-                        Size = utility:Size(1, 0, 0, 18, keybindslist_outline),
+                        Size = utility:Size(1, 0, 0, 24, keybindslist_outline),
                         Position = utility:Position(0, 0, 1, -1, keybindslist_outline),
                         Hidden = true,
                         ZIndex = 55,
@@ -3226,7 +3227,7 @@ do
                                 Color = theme.light_contrast,
                                 Visible = page.open
                             }, multibox.holder.drawings)
-                            --[[
+                            --
                             local multibox_value_gradient = utility:Create("Image", {Vector2.new(0,0), multibox_value_frame}, {
                                 Size = utility:Size(1, 0, 1, 0, multibox_value_frame),
                                 Position = utility:Position(0, 0, 0 , 0, multibox_value_frame),
