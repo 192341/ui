@@ -44,9 +44,7 @@ local theme = {
     textborder = Color3.fromRGB(0, 0, 0),
     cursoroutline = Color3.fromRGB(20, 20, 20),
     font = 2,
-    textsize = 13,
-    KeybindsList = false,
-    Watermark = false
+    textsize = 13
 }
 
 --textbox
