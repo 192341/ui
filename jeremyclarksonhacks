@@ -957,7 +957,7 @@ do
             local info = info or {}
             --
             local keybindslist_outline = utility:Create("Frame", {Vector2.new(10,(utility:GetScreenSize().Y/2)-200)}, {
-                Size = utility:Size(0, 172, 0, 25),
+                Size = utility:Size(0, 200, 0, 25),
                 Position = utility:Position(0, 10, 0.4, 0),
                 Hidden = true,
                 ZIndex = 53,
