@@ -28,7 +28,7 @@ local library = {
         ping = 0
     }
 }
-
+--tab
 local utility = {}
 local pages = {}
 local sections = {}
@@ -1316,7 +1316,7 @@ do
         --
         local page_button_Topbar = utility:Create("Frame", {Vector2.new(1,1), page_button}, {
             Size = utility:Size(1, 0, 0, 1, page_button),
-            Position = utility:Position(0, 3, 0, 1, window.currentPage.page_button),
+            Position = utility:Position(0, 3, 0, 1, window.currentPage),
             Color = theme.accent
         });page["page_button_Topbar"] = page_button_Topbar
         --
