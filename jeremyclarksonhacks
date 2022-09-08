@@ -458,6 +458,12 @@ do
             Color = theme.inline
         })
         --
+        local tab_frame_topbar = utility:Create("Frame", {Vector2.new(4,1), tab_frame_inline}, {
+            Size = utility:Size(1, -2, 1, -2, tab_frame_inline),
+            Position = utility:Position(0, 1, 0, 1, tab_frame_inline),
+            Color = theme.accent
+        })
+        --
         local tab_frame = utility:Create("Frame", {Vector2.new(1,1), tab_frame_inline2}, {
             Size = utility:Size(1, -2, 1, -2, tab_frame_inline2),
             Position = utility:Position(0, 1, 0, 1, tab_frame_inline2),
@@ -2171,7 +2177,7 @@ do
             --
             local allowedKeyCodes = {"Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C","V","B","N","M","One","Two","Three","Four","Five","Six","Seveen","Eight","Nine","0","Insert","Tab","Home","End","LeftAlt","LeftControl","LeftShift","RightAlt","RightControl","RightShift","CapsLock","Delete","PageUp","PageDown"}
             local allowedInputTypes = {"MouseButton1","MouseButton2","MouseButton3"}
-            local shortenedInputs = {["MouseButton1"] = "MB1", ["MouseButton2"] = "MB2", ["MouseButton3"] = "MB3", ["Insert"] = "Ins", ["LeftAlt"] = "LAlt", ["LeftControl"] = "LC", ["LeftShift"] = "LS", ["RightAlt"] = "RAlt", ["RightControl"] = "RC", ["RightShift"] = "RS", ["CapsLock"] = "Caps", ["Delete"] = "Del", ["PageUp"] = "PUP", ["PageDown"] = "PDO"}
+            local shortenedInputs = {["MouseButton1"] = "MB1", ["MouseButton2"] = "MB2", ["MouseButton3"] = "MB3", ["Insert"] = "Ins", ["LeftAlt"] = "LAlt", ["LeftControl"] = "LCTRL", ["LeftShift"] = "LS", ["RightAlt"] = "RAlt", ["RightControl"] = "RCTRL", ["RightShift"] = "RS", ["CapsLock"] = "Caps", ["Delete"] = "Del", ["PageUp"] = "PUP", ["PageDown"] = "PDO"}
             --
             local keybind_outline = utility:Create("Frame", {Vector2.new(section.section_frame.Size.X-(40+4),keybind.axis), section.section_frame}, {
                 Size = utility:Size(0, 40, 0, 17),
