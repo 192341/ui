@@ -1312,12 +1312,6 @@ do
             Color = theme.inline
         });page["page_button_inline"] = page_button_inline
         --
-        local page_button_Topbar = utility:Create("Frame", {Vector2.new(1,1), page_button}, {
-            Size = utility:Size(1, 0, 0, 1, page_button),
-            Position = utility:Position(0, 3, 0, 1, page_button_inline),
-            Color = theme.accent
-        });page["page_button_Topbar"] = page_button_Topbar
-        --
         local page_button_color = utility:Create("Frame", {Vector2.new(1,1), page_button_inline}, {
             Size = utility:Size(1, -2, 1, -1, page_button_inline),
             Position = utility:Position(0, 1, 0, 1, page_button_inline),
@@ -1386,6 +1380,11 @@ do
         library.began[#library.began + 1] = function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and window.isVisible and utility:MouseOverDrawing({page_button.Position.X,page_button.Position.Y,page_button.Position.X + page_button.Size.X,page_button.Position.Y + page_button.Size.Y}) and window.currentPage ~= page then
                 page:Show()
+                local page_button_Topbar = utility:Create("Frame", {Vector2.new(1,1), page_button}, {
+                    Size = utility:Size(1, 0, 0, 1, page_button),
+                    Position = utility:Position(0, 3, 0, 1, page_button),
+                    Color = theme.accent
+                });page["page_button_Topbar"] = page_button_Topbar
             end
         end
         --
