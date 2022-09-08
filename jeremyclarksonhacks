@@ -1314,11 +1314,11 @@ do
             Color = theme.inline
         });page["page_button_inline"] = page_button_inline
         --
-        local page_button_Topbar = utility:Create("Frame", {Vector2.new(1,1), page_button}, {
+        local window.currentPage.page_button_Topbar = utility:Create("Frame", {Vector2.new(1,1), page_button}, {
             Size = utility:Size(1, 0, 0, 1, page_button),
-            Position = utility:Position(0, 3, 0, 1, page_button),
+            Position = utility:Position(0, 3, 0, 1, window.currentPage.page_button),
             Color = theme.accent
-        });page["page_button_Topbar"] = page_button_Topbar
+        });page["window.currentPage.page_button_Topbar"] = window.currentPage.page_button_Topbar
         --
         local page_button_color = utility:Create("Frame", {Vector2.new(1,1), page_button_inline}, {
             Size = utility:Size(1, -2, 1, -1, page_button_inline),
