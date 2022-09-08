@@ -32,7 +32,7 @@ local utility = {}
 local pages = {}
 local sections = {}
 -- Theme Variables
---local themes = {}
+local themes = {}
 local theme = {
     accent = Color3.fromRGB(143,129,223),
     light_contrast = Color3.fromRGB(30, 30, 30),
