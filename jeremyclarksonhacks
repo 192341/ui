@@ -1354,15 +1354,15 @@ do
                 window.currentPage.page_button_color.Size = utility:Size(1, -2, 1, -1, window.currentPage.page_button_inline)
                 window.currentPage.page_button_color.Color = theme.dark_contrast
                 window.currentPage.open = false
-                local page_button_Topbar = utility:Create("Frame", {Vector2.new(1,1), page_button}, {
-                    Size = utility:Size(0, 0, 0, 0, page_button),
-                    Position = utility:Position(0, 1, 0, 1, window.currentPage.page_button),
-                    Color = theme.accent
-                });page["window.currentPage.page_button_Topbar"] = window.currentPage.page_button_Topbar
                 --
                 for i,v in pairs(window.currentPage.sections) do
                     for z,x in pairs(v.visibleContent) do
                         x.Visible = false
+                        local page_button_Topbar = utility:Create("Frame", {Vector2.new(1,1), page_button}, {
+                            Size = utility:Size(0, 0, 0, 0, page_button),
+                            Position = utility:Position(0, 1, 0, 1, window.currentPage.page_button),
+                            Color = theme.accent
+                        });page["window.currentPage.page_button_Topbar"] = window.currentPage.page_button_Topbar
                     end
                 end
                 --
@@ -1373,15 +1373,15 @@ do
             page_button_color.Size = utility:Size(1, -2, 1, 0, page_button_inline)
             page_button_color.Color = theme.light_contrast
             page.open = true
-            local page_button_Topbar = utility:Create("Frame", {Vector2.new(1,1), page_button}, {
-                Size = utility:Size(1, 0, 0, 1, page_button),
-                Position = utility:Position(0, 1, 0, 1, window.currentPage.page_button),
-                Color = theme.accent
-            });page["window.currentPage.page_button_Topbar"] = window.currentPage.page_button_Topbar
             --
             for i,v in pairs(page.sections) do
                 for z,x in pairs(v.visibleContent) do
                     x.Visible = true
+                    local page_button_Topbar = utility:Create("Frame", {Vector2.new(1,1), page_button}, {
+                        Size = utility:Size(1, 0, 0, 1, page_button),
+                        Position = utility:Position(0, 1, 0, 1, window.currentPage.page_button),
+                        Color = theme.accent
+                    });page["window.currentPage.page_button_Topbar"] = window.currentPage.page_button_Topbar
                 end
             end
         end
