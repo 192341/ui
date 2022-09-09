@@ -958,7 +958,7 @@ do
                 Position = utility:Position(0, 10, 0.4, 0),
                 Hidden = true,
                 ZIndex = 53,
-                Color = theme.outline,
+                Color = theme.dark_contrast,
                 Visible = window.keybindslist.visible
             })window.keybindslist.outline = keybindslist_outline
             --
@@ -976,7 +976,7 @@ do
                 Position = utility:Position(0, 1, 0, 1, keybindslist_inline),
                 Hidden = true,
                 ZIndex = 55,
-                Color = theme.light_contrast,
+                Color = theme.dark_contrast,
                 Visible = window.keybindslist.visible
             })
             --
@@ -1039,7 +1039,7 @@ do
                         Position = utility:Position(0, 1, 0, 1, keybind_inline),
                         Hidden = true,
                         ZIndex = 57,
-                        Color = theme.light_contrast,
+                        Color = theme.dark_contrast,
                         Visible = window.keybindslist.visible
                     })
                     --
