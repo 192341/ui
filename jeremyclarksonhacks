@@ -1012,7 +1012,7 @@ do
                 Visible = true,
             })
             --
-            utility:LoadImage(keybinds_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+            utility:LoadImage(keybindslist_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
             --
             function window.keybindslist:Resort()
                 local index = 0
