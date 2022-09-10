@@ -35,7 +35,7 @@ local sections = {}
 local themes = {}
 local theme = {
     accent = Color3.fromRGB(143,129,223),
-    light_contrast = Color3.fromRGB(30, 30, 30),
+    light_contrast = Color3.fromRGB(28, 28, 28),
     dark_contrast = Color3.fromRGB(20, 20, 20),
     outline = Color3.fromRGB(0, 0, 0),
     inline = Color3.fromRGB(50, 50, 50),
@@ -388,8 +388,8 @@ do
     --
     function library:New(info)
 	local info = info or {}
-        local name = info.name or info.Name or "oneshot public build"
-        local title = info.title or info.Title or "oneshot public build"
+        local name = info.name or info.Name or "oneshot"
+        local title = info.title or info.Title or "oneshot"
         local size = info.size or info.Size or Vector2.new(504,604)
         local accent = info.accent or info.Accent or info.color or info.Color or theme.accent
         --
@@ -958,7 +958,7 @@ do
                 Position = utility:Position(0, 10, 0.4, 0),
                 Hidden = true,
                 ZIndex = 53,
-                Color = theme.dark_contrast,
+                Color = theme.outline,
                 Visible = window.keybindslist.visible
             })window.keybindslist.outline = keybindslist_outline
             --
@@ -967,7 +967,7 @@ do
                 Position = utility:Position(0, 1, 0, 1, keybindslist_outline),
                 Hidden = true,
                 ZIndex = 54,
-                Color = theme.dark_contrast,
+                Color = theme.inline,
                 Visible = window.keybindslist.visible
             })
             --
@@ -1003,6 +1003,17 @@ do
                 Visible = window.keybindslist.visible
             })
             --
+            local keybindslist_gradient = utility:Create("Image", {Vector2.new(0, 0), keybindslist_frame}, {
+                Size = utility:Size(1, 0, 1, 0, keybindslist_frame),
+                Position = utility:Position(0, 0, 0, 0, keybindslist_frame),
+                Transparency = 0,
+                ZIndex = 4,
+                Hidden = true,
+                Visible = true,
+            })
+            --
+            utility:LoadImage(keybindslist_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+            --
             function window.keybindslist:Resort()
                 local index = 0
                 for i,v in pairs(window.keybindslist.keybinds) do
@@ -1030,7 +1041,7 @@ do
                         Position = utility:Position(0, 1, 0, 1, keybind_outline),
                         Hidden = true,
                         ZIndex = 56,
-                        Color = theme.dark_contrast,
+                        Color = theme.light_contrast,
                         Visible = window.keybindslist.visible
                     })
                     --
@@ -1039,7 +1050,7 @@ do
                         Position = utility:Position(0, 1, 0, 1, keybind_inline),
                         Hidden = true,
                         ZIndex = 57,
-                        Color = theme.dark_contrast,
+                        Color = theme.light_contrast,
                         Visible = window.keybindslist.visible
                     })
                     --
@@ -1067,6 +1078,17 @@ do
                         Position = utility:Position(1, -4 - utility:GetTextBounds(keybindname, theme.textsize, theme.font).X, 0, 3, keybind_outline),
                         Visible = window.keybindslist.visible
                     })
+                    --
+                    local keybinds_gradient = utility:Create("Image", {Vector2.new(0, 0), keybind_frame}, {
+                        Size = utility:Size(1, 0, 1, 0, keybind_frame),
+                        Position = utility:Position(0, 0, 0, 0, keybind_frame),
+                        Transparency = 0,
+                        ZIndex = 4,
+                        Hidden = true,
+                        Visible = true,
+                    })
+                    --
+                    utility:LoadImage(keybinds_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
                     --
                     function keybindTable:Move(yPos)
                         keybind_outline.Position = utility:Position(0, 0, 1, -1 + yPos, keybindslist_outline)
