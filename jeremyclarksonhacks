@@ -1079,6 +1079,17 @@ do
                         Visible = window.keybindslist.visible
                     })
                     --
+                    local keybinds_gradient = utility:Create("Image", {Vector2.new(0, 0), keybind_frame}, {
+                        Size = utility:Size(1, 0, 1, 0, keybind_frame),
+                        Position = utility:Position(0, 0, 0, 0, keybind_frame),
+                        Transparency = 0,
+                        ZIndex = 4,
+                        Hidden = true,
+                        Visible = true,
+                    })
+                    --
+                    utility:LoadImage(keybinds_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+                    --
                     function keybindTable:Move(yPos)
                         keybind_outline.Position = utility:Position(0, 0, 1, -1 + yPos, keybindslist_outline)
                         keybind_inline.Position = utility:Position(0, 1, 0, 1, keybind_outline)
