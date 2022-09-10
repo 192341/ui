@@ -967,7 +967,7 @@ do
                 Position = utility:Position(0, 1, 0, 1, keybindslist_outline),
                 Hidden = true,
                 ZIndex = 54,
-                Color = theme.inline,
+                Color = theme.dark_contrast,
                 Visible = window.keybindslist.visible
             })
             --
