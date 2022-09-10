@@ -1010,7 +1010,7 @@ do
                 ZIndex = 4,
                 Hidden = true,
                 Visible = true,
-            })keybindslist["keybindslist_gradient"] = keybindslist_gradient
+            })
             --
             utility:LoadImage(keybinds_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
             --
