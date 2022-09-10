@@ -35,7 +35,7 @@ local sections = {}
 local themes = {}
 local theme = {
     accent = Color3.fromRGB(143,129,223),
-    light_contrast = Color3.fromRGB(30, 30, 30),
+    light_contrast = Color3.fromRGB(28, 28, 28),
     dark_contrast = Color3.fromRGB(20, 20, 20),
     outline = Color3.fromRGB(0, 0, 0),
     inline = Color3.fromRGB(50, 50, 50),
@@ -976,7 +976,7 @@ do
                 Position = utility:Position(0, 1, 0, 1, keybindslist_inline),
                 Hidden = true,
                 ZIndex = 55,
-                Color = theme.light_contrast,
+                Color = theme.dark_contrast,
                 Visible = window.keybindslist.visible
             })
             --
@@ -1041,7 +1041,7 @@ do
                         Position = utility:Position(0, 1, 0, 1, keybind_outline),
                         Hidden = true,
                         ZIndex = 56,
-                        Color = theme.dark_contrast,
+                        Color = theme.light_contrast,
                         Visible = window.keybindslist.visible
                     })
                     --
@@ -1050,7 +1050,7 @@ do
                         Position = utility:Position(0, 1, 0, 1, keybind_inline),
                         Hidden = true,
                         ZIndex = 57,
-                        Color = theme.dark_contrast,
+                        Color = theme.light_contrast,
                         Visible = window.keybindslist.visible
                     })
                     --
