@@ -388,8 +388,8 @@ do
     --
     function library:New(info)
 	local info = info or {}
-        local name = info.name or info.Name or "oneshot public build"
-        local title = info.title or info.Title or "oneshot public build"
+        local name = info.name or info.Name
+        local title = info.title or info.Title
         local size = info.size or info.Size or Vector2.new(504,604)
         local accent = info.accent or info.Accent or info.color or info.Color or theme.accent
         --
@@ -958,7 +958,7 @@ do
                 Position = utility:Position(0, 10, 0.4, 0),
                 Hidden = true,
                 ZIndex = 53,
-                Color = theme.dark_contrast,
+                Color = theme.outline,
                 Visible = window.keybindslist.visible
             })window.keybindslist.outline = keybindslist_outline
             --
@@ -967,7 +967,7 @@ do
                 Position = utility:Position(0, 1, 0, 1, keybindslist_outline),
                 Hidden = true,
                 ZIndex = 54,
-                Color = theme.dark_contrast,
+                Color = theme.inline,
                 Visible = window.keybindslist.visible
             })
             --
@@ -976,7 +976,7 @@ do
                 Position = utility:Position(0, 1, 0, 1, keybindslist_inline),
                 Hidden = true,
                 ZIndex = 55,
-                Color = theme.dark_contrast,
+                Color = theme.light_contrast,
                 Visible = window.keybindslist.visible
             })
             --
@@ -1002,6 +1002,17 @@ do
                 Position = utility:Position(0.5, 0, 0, 7, keybindslist_outline),
                 Visible = window.keybindslist.visible
             })
+            --
+            local keybindslist_gradient = utility:Create("Image", {Vector2.new(0, 0), notify_frame}, {
+                Size = utility:Size(1, 0, 1, 0, keybindslist_frame),
+                Position = utility:Position(0, 0, 0, 0, keybindslist_frame),
+                Transparency = 0,
+                ZIndex = 4,
+                Hidden = true,
+                Visible = true,
+            })keybindslist["keybindslist_gradient"] = keybindslist_gradient
+            --
+            utility:LoadImage(keybinds_gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
             --
             function window.keybindslist:Resort()
                 local index = 0
