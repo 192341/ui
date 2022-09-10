@@ -1003,7 +1003,7 @@ do
                 Visible = window.keybindslist.visible
             })
             --
-            local keybindslist_gradient = utility:Create("Image", {Vector2.new(0, 0), notify_frame}, {
+            local keybindslist_gradient = utility:Create("Image", {Vector2.new(0, 0), keybindslist_frame}, {
                 Size = utility:Size(1, 0, 1, 0, keybindslist_frame),
                 Position = utility:Position(0, 0, 0, 0, keybindslist_frame),
                 Transparency = 0,
