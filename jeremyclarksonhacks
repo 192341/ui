@@ -567,7 +567,7 @@ do
             if window.currentContent.dropdown and window.currentContent.dropdown.open then
                 local dropdown = window.currentContent.dropdown
                 dropdown.open = not dropdown.open
-                utility:LoadImage(dropdown.dropdown_image, "dropdown_down", "https://i.ibb.co/J5hz1cS/Minus-Icon.png")
+                utility:LoadImage(dropdown.dropdown_image, "dropdown_down", "https://raw.githubusercontent.com/192341/assets/main/arrow_pointing_down.png")
                 --
                 for i,v in pairs(dropdown.holder.drawings) do
                     utility:Remove(v)
@@ -582,7 +582,7 @@ do
             elseif window.currentContent.multibox and window.currentContent.multibox.open then
                 local multibox = window.currentContent.multibox
                 multibox.open = not multibox.open
-                utility:LoadImage(multibox.multibox_image, "dropdown_down", "https://i.ibb.co/J5hz1cS/Minus-Icon.png")
+                utility:LoadImage(multibox.multibox_image, "dropdown_down", "https://raw.githubusercontent.com/192341/assets/main/arrow_pointing_down.png")
                 --
                 for i,v in pairs(multibox.holder.drawings) do
                     utility:Remove(v)
@@ -3021,7 +3021,7 @@ do
                         dropdown:Update()
                     else
                         dropdown.open = not dropdown.open
-                        utility:LoadImage(dropdown_image, "dropdown_down", "https://i.ibb.co/J5hz1cS/Minus-Icon.png")
+                        utility:LoadImage(dropdown_image, "dropdown_down", "https://raw.githubusercontent.com/192341/assets/main/arrow_pointing_down.png")
                         --
                         for i,v in pairs(dropdown.holder.drawings) do
                             utility:Remove(v)
@@ -3037,7 +3037,7 @@ do
                 else
                     if dropdown.open then
                         dropdown.open = not dropdown.open
-                        utility:LoadImage(dropdown_image, "dropdown_down", "https://i.ibb.co/J5hz1cS/Minus-Icon.png")
+                        utility:LoadImage(dropdown_image, "dropdown_down", "https://raw.githubusercontent.com/192341/assets/main/arrow_pointing_down.png")
                         --
                         for i,v in pairs(dropdown.holder.drawings) do
                             utility:Remove(v)
@@ -3053,7 +3053,7 @@ do
                 end
             elseif Input.UserInputType == Enum.UserInputType.MouseButton1 and dropdown.open then
                 dropdown.open = not dropdown.open
-                utility:LoadImage(dropdown_image, "dropdown_down", "https://i.ibb.co/J5hz1cS/Minus-Icon.png")
+                utility:LoadImage(dropdown_image, "dropdown_down", "https://raw.githubusercontent.com/192341/assets/main/arrow_pointing_down.png")
                 --
                 for i,v in pairs(dropdown.holder.drawings) do
                     utility:Remove(v)
@@ -3158,7 +3158,7 @@ do
             Visible = page.open
         }, section.visibleContent);multibox["multibox_image"] = multibox_image
         --
-        utility:LoadImage(multibox_image, "dropdown_down", "https://i.ibb.co/J5hz1cS/Minus-Icon.png")
+        utility:LoadImage(multibox_image, "dropdown_down", "https://raw.githubusercontent.com/192341/assets/main/arrow_pointing_down.png")
         utility:LoadImage(multibox__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
         --
         function multibox:Update()
@@ -3228,7 +3228,7 @@ do
                     if not multibox.open then
                         window:CloseContent()
                         multibox.open = not multibox.open
-                        utility:LoadImage(multibox_image, "dropdown_up", "https://i.ibb.co/YhxRmfm/Plus-Icon.png")
+                        utility:LoadImage(multibox_image, "dropdown_up", "https://raw.githubusercontent.com/192341/assets/main/arrow_pointing_up.png")
                         --
                         local multibox_open_outline = utility:Create("Frame", {Vector2.new(0,19), multibox_outline}, {
                             Size = utility:Size(1, 0, 0, 3 + (#options * 19), multibox_outline),
@@ -3276,7 +3276,7 @@ do
                         window.currentContent.multibox = multibox
                     else
                         multibox.open = not multibox.open
-                        utility:LoadImage(multibox_image, "dropdown_down", "https://i.ibb.co/J5hz1cS/Minus-Icon.png")
+                        utility:LoadImage(multibox_image, "dropdown_down", "https://raw.githubusercontent.com/192341/assets/main/arrow_pointing_down.png")
                         --
                         for i,v in pairs(multibox.holder.drawings) do
                             utility:Remove(v)
@@ -3292,7 +3292,7 @@ do
                 else
                     if multibox.open then
                         multibox.open = not multibox.open
-                        utility:LoadImage(multibox_image, "dropdown_down", "https://i.ibb.co/J5hz1cS/Minus-Icon.png")
+                        utility:LoadImage(multibox_image, "dropdown_down", "https://raw.githubusercontent.com/192341/assets/main/arrow_pointing_down.png")
                         --
                         for i,v in pairs(multibox.holder.drawings) do
                             utility:Remove(v)
@@ -3308,7 +3308,7 @@ do
                 end
             elseif Input.UserInputType == Enum.UserInputType.MouseButton1 and multibox.open then
                 multibox.open = not multibox.open
-                utility:LoadImage(multibox_image, "dropdown_down", "https://i.ibb.co/J5hz1cS/Minus-Icon.png")
+                utility:LoadImage(multibox_image, "dropdown_down", "https://raw.githubusercontent.com/192341/assets/main/arrow_pointing_down.png")
                 --
                 for i,v in pairs(multibox.holder.drawings) do
                     utility:Remove(v)
