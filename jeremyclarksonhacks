@@ -2930,7 +2930,7 @@ do
             Visible = page.open
         }, section.visibleContent);dropdown["dropdown_image"] = dropdown_image
         --
-        utility:LoadImage(dropdown_image, "dropdown_down", "https://i.ibb.co/kyD8ZgK/Splix-Minus-Icon.png")
+        utility:LoadImage(dropdown_image, "dropdown_down", "https://i.ibb.co/CMMHc5Q/arrow-pointing-down.png")
         utility:LoadImage(dropdown__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
         --
         function dropdown:Update()
