@@ -38,8 +38,8 @@ local sections = {}
 -- Theme Variables
 local themes = {}
 local theme = {
-    accent = Color3.fromRGB(123,104,238),
-    light_contrast = Color3.fromRGB(30, 30, 30),
+    accent = Color3.fromRGB(143,129,223),
+    light_contrast = Color3.fromRGB(28, 28, 28),
     dark_contrast = Color3.fromRGB(20, 20, 20),
     outline = Color3.fromRGB(0, 0, 0),
     inline = Color3.fromRGB(50, 50, 50),
@@ -62,7 +62,7 @@ do
             --
             return Vector2.new(x,y)
         else
-            local vx,vy = ws.CurrentCamera.ViewportSize.x,ws.CurrentCamera.ViewportSize.y
+            local vx,vy = ws.Camera.ViewportSize.x,ws.Camera.ViewportSize.y
             --
             local x = xScale*vx+xOffset
             local y = yScale*vy+yOffset
@@ -101,7 +101,7 @@ do
             --
             return Vector2.new(x,y)
         else
-            local vx,vy = ws.CurrentCamera.ViewportSize.x,ws.CurrentCamera.ViewportSize.y
+            local vx,vy = ws.Camera.ViewportSize.x,ws.Camera.ViewportSize.y
             --
             local x = xScale*vx+xOffset
             local y = yScale*vy+yOffset
@@ -321,7 +321,7 @@ do
     end
     --
     function utility:GetScreenSize()
-        return ws.CurrentCamera.ViewportSize
+        return ws.Camera.ViewportSize
     end
     --
     function utility:LoadImage(instance, imageName, imageLink)
@@ -393,8 +393,8 @@ do
     --
     function library:New(info)
 	local info = info or {}
-        local name = info.name or info.Name or "avonhook"
-        local title = info.title or info.Title or "avonhook"
+        local name = info.name or info.Name or "Oneshot"
+        local title = info.title or info.Title or "Oneshot"
         local size = info.size or info.Size or Vector2.new(504,604)
         local accent = info.accent or info.Accent or info.color or info.Color or theme.accent
         --
@@ -1154,7 +1154,7 @@ do
                 end
             end
             --
-            utility:Connection(ws.CurrentCamera:GetPropertyChangedSignal("ViewportSize"),function()
+            utility:Connection(ws.Camera:GetPropertyChangedSignal("ViewportSize"),function()
                 keybindslist_outline.Position = utility:Position(0, 10, 0.4, 0)
                 keybindslist_inline.Position = utility:Position(0, 1, 0, 1, keybindslist_outline)
                 keybindslist_frame.Position = utility:Position(0, 1, 0, 1, keybindslist_inline)
@@ -1303,7 +1303,7 @@ do
             end
         end)
         --
-        utility:Connection(ws.CurrentCamera:GetPropertyChangedSignal("ViewportSize"),function()
+        utility:Connection(ws.Camera:GetPropertyChangedSignal("ViewportSize"),function()
             window:Move(Vector2.new((utility:GetScreenSize().X/2) - (size.X/2), (utility:GetScreenSize().Y/2) - (size.Y/2)))
         end)
         --
