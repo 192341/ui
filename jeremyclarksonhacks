@@ -1,4 +1,3 @@
---Splix Ui--
 
 -- // Variables \\ --
 
@@ -784,7 +783,7 @@ do
             --
             spawn(function()
                 while wait(0.1) do
-                    watermark_title.Text = string.format("oneshot | public build | Ping : " .. tostring(library.shared.ping) .. "ms | FPS : " .. tostring(library.shared.fps), window.name)
+                    watermark_title.Text = string.format("avonhook | public build | Ping : " .. tostring(library.shared.ping) .. "ms | FPS : " .. tostring(library.shared.fps), window.name)
                     window.watermark:UpdateSize()
                 end
             end)
