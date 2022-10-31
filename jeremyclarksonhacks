@@ -2930,7 +2930,7 @@ do
             Font = theme.font,
             Color = theme.textcolor,
             OutlineColor = theme.textborder,
-            Position = utility:Position(1, -15, 0.5, 1, dropdown_frame),
+            Position = utility:Position(1, -15, 2, 1, dropdown_frame),
             Visible = page.open
         }, section.visibleContent)
         --
