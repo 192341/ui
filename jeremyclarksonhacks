@@ -582,7 +582,7 @@ do
             elseif window.currentContent.multibox and window.currentContent.multibox.open then
                 local multibox = window.currentContent.multibox
                 multibox.open = not multibox.open
-                dropdown_text.Text = "+"
+                utility:LoadImage(multibox.multibox_image, "dropdown_down", "https://i.ibb.co/CMMHc5Q/arrow-pointing-down.png")
                 --
                 for i,v in pairs(multibox.holder.drawings) do
                     utility:Remove(v)
@@ -2924,13 +2924,19 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
+        local dropdown_image = utility:Create("Image", {Vector2.new(dropdown_frame.Size.X - 15,dropdown_frame.Size.Y/2 - 3), dropdown_frame}, {
+            Size = utility:Size(0, 9, 0, 6, dropdown_frame),
+            Position = utility:Position(1, -15, 0.5, -3, dropdown_frame),
+            Visible = page.open
+        }, section.visibleContent);dropdown["dropdown_image"] = dropdown_image
+        --
         local dropdown_text = utility:Create("TextLabel", {Vector2.new(dropdown_frame.Size.X - 15,dropdown_frame.Size.Y/2 - 3), dropdown_frame}, {
             Text = "+",
             Size = theme.textsize,
             Font = theme.font,
             Color = theme.textcolor,
             OutlineColor = theme.textborder,
-            Position = utility:Position(1, -15, 0.5, -3, dropdown_frame),
+            Position = utility:Position(1, -15, 0.5, -1, dropdown_frame),
             Visible = page.open
         }, section.visibleContent)
         --
@@ -2982,7 +2988,7 @@ do
                     if not dropdown.open then
                         window:CloseContent()
                         dropdown.open = not dropdown.open
-                        dropdown_text.Text = "+"
+                        
                         --
                         local dropdown_open_outline = utility:Create("Frame", {Vector2.new(0,19), dropdown_outline}, {
                             Size = utility:Size(1, 0, 0, 3 + (#options * 19), dropdown_outline),
@@ -3038,7 +3044,7 @@ do
                 else
                     if dropdown.open then
                         dropdown.open = not dropdown.open
-                        dropdown_text.Text = "+"
+                        dropdown_text.Text = "-"
                         --
                         for i,v in pairs(dropdown.holder.drawings) do
                             utility:Remove(v)
@@ -3054,7 +3060,7 @@ do
                 end
             elseif Input.UserInputType == Enum.UserInputType.MouseButton1 and dropdown.open then
                 dropdown.open = not dropdown.open
-                dropdown_text.Text = "+"
+                utility:LoadImage(dropdown_image, "dropdown_down", "https://i.ibb.co/CMMHc5Q/arrow-pointing-down.png")
                 --
                 for i,v in pairs(dropdown.holder.drawings) do
                     utility:Remove(v)
@@ -3159,7 +3165,7 @@ do
             Visible = page.open
         }, section.visibleContent);multibox["multibox_image"] = multibox_image
         --
-        utility:LoadImage(multibox_image, "dropdown_down", "https://i.ibb.co/CMMHc5Q/arrow-pointing-down.png")
+        utility:LoadImage(multibox_image, "dropdown_down", "https://i.ibb.co/CMMHc5Q/arrow-pointing-up.png")
         utility:LoadImage(multibox__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
         --
         function multibox:Update()
@@ -3229,7 +3235,7 @@ do
                     if not multibox.open then
                         window:CloseContent()
                         multibox.open = not multibox.open
-                        utility:LoadImage(multibox_image, "dropdown_up", "https://i.ibb.co/tqR6KVT/arrow-pointing-up.png")
+                        
                         --
                         local multibox_open_outline = utility:Create("Frame", {Vector2.new(0,19), multibox_outline}, {
                             Size = utility:Size(1, 0, 0, 3 + (#options * 19), multibox_outline),
