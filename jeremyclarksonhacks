@@ -2924,14 +2924,15 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        local dropdown_image = utility:Create("Image", {Vector2.new(dropdown_frame.Size.X - 15,dropdown_frame.Size.Y/2 - 3), dropdown_frame}, {
-            Size = utility:Size(0, 9, 0, 6, dropdown_frame),
+        local dropdown_text = utility:Create("TextLabel", {Vector2.new(dropdown_frame.Size.X - 15,dropdown_frame.Size.Y/2 - 3), dropdown_frame}, {
+            Text = "+",
+            Size = theme.textsize,
+            Font = theme.font,
+            Color = theme.textcolor,
+            OutlineColor = theme.textborder,
             Position = utility:Position(1, -15, 0.5, -3, dropdown_frame),
             Visible = page.open
-        }, section.visibleContent);dropdown["dropdown_image"] = dropdown_image
-        --
-        utility:LoadImage(dropdown_image, "dropdown_down", "https://i.ibb.co/CMMHc5Q/arrow-pointing-down.png")
-        utility:LoadImage(dropdown__gradient, "gradient", "https://i.imgur.com/5hmlrjX.png")
+        }, section.visibleContent)
         --
         function dropdown:Update()
             if dropdown.open and dropdown.holder.inline then
@@ -2981,7 +2982,7 @@ do
                     if not dropdown.open then
                         window:CloseContent()
                         dropdown.open = not dropdown.open
-                        utility:LoadImage(dropdown_image, "dropdown_up", "https://i.ibb.co/tqR6KVT/arrow-pointing-up.png")
+                        dropdown_text.Text = "+"
                         --
                         local dropdown_open_outline = utility:Create("Frame", {Vector2.new(0,19), dropdown_outline}, {
                             Size = utility:Size(1, 0, 0, 3 + (#options * 19), dropdown_outline),
@@ -3021,7 +3022,7 @@ do
                         dropdown:Update()
                     else
                         dropdown.open = not dropdown.open
-                        utility:LoadImage(dropdown_image, "dropdown_down", "https://i.ibb.co/CMMHc5Q/arrow-pointing-down.png")
+                        dropdown_text.Text = "-"
                         --
                         for i,v in pairs(dropdown.holder.drawings) do
                             utility:Remove(v)
@@ -3037,7 +3038,7 @@ do
                 else
                     if dropdown.open then
                         dropdown.open = not dropdown.open
-                        utility:LoadImage(dropdown_image, "dropdown_down", "https://i.ibb.co/CMMHc5Q/arrow-pointing-down.png")
+                        dropdown_text.Text = "-"
                         --
                         for i,v in pairs(dropdown.holder.drawings) do
                             utility:Remove(v)
@@ -3053,7 +3054,7 @@ do
                 end
             elseif Input.UserInputType == Enum.UserInputType.MouseButton1 and dropdown.open then
                 dropdown.open = not dropdown.open
-                utility:LoadImage(dropdown_image, "dropdown_down", "https://i.ibb.co/CMMHc5Q/arrow-pointing-down.png")
+                dropdown_text.Text = "-"
                 --
                 for i,v in pairs(dropdown.holder.drawings) do
                     utility:Remove(v)
