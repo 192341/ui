@@ -23,7 +23,7 @@ library.theme = {
     titlesize = 18,
     font = Enum.Font.Ubuntu,
     background = "http://www.roblox.com/asset/?id=11468560374",
-    tilesize = 90,
+    tilesize = 150,
     cursor = false,
     cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
     tabstextcolor = Color3.fromRGB(255, 255, 255),
