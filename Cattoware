@@ -14,6 +14,11 @@ local textservice = game:GetService("TextService")
 local coregui = game:GetService("CoreGui")
 local httpservice = game:GetService("HttpService")
 
+local day = os.date("%d")
+local month = os.date("%B")
+local th = "th"
+local year = os.date("%Y")
+
 local player = players.LocalPlayer
 local mouse = player:GetMouse()
 local camera = game.Workspace.CurrentCamera
@@ -163,11 +168,6 @@ function library:CreateWatermark(name, position)
         if not name:find("{fps}") then
             watermark.label.Text = " " .. name:gsub("{game}", gamename):gsub("{fps}", "0 FPS") .. " "
         end
-	
-	local day = os.date("%d")
-        local month = os.date("%B")
-        local th = "th"
-        local year = os.date("%Y")
 
         if name:find("{fps}") then
             local currentTime = os.clock()
