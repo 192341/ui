@@ -163,6 +163,11 @@ function library:CreateWatermark(name, position)
         if not name:find("{fps}") then
             watermark.label.Text = " " .. name:gsub("{game}", gamename):gsub("{fps}", "0 FPS") .. " "
         end
+	
+	local day = os.date("%d")
+        local month = os.date("%B")
+        local th = "th"
+        local year = os.date("%Y")
 
         if name:find("{fps}") then
             local currentTime = os.clock()
@@ -173,7 +178,7 @@ function library:CreateWatermark(name, position)
                 startTime = currentTime
 
                 if fps ~= oldfps then
-                    watermark.label.Text = " " .. name:gsub("{game}", gamename):gsub("{fps}", fps .. " FPS") .. " "
+                    watermark.label.Text = " " .. name:gsub("{game}", gamename):gsub("{fps}", fps .. " FPS") .. "┃ "..month..dd4..day..th.." "..year 
         
                     watermark.label.Size = UDim2.new(0, watermark.label.TextBounds.X+10, 0, 25)
                     watermark.mainbar.Size = UDim2.new(0, watermark.label.TextBounds.X, 0, 25)
